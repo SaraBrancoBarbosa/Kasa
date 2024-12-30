@@ -1,6 +1,5 @@
 function Banner() {
-	const title = 'Chez vous, partout et ailleurs'
-	return <h1>{title}</h1>
+	return <h1>Chez vous, <span className="mobile-break-line">partout et ailleurs</span></h1>
 }
 
 export default Banner
