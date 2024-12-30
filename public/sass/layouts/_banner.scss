@@ -1,0 +1,10 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1240px;
+    height: 223px;
+    border-radius: 25px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)) , url("../../../src/assets/img/banner.png");
+}

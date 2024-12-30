@@ -1,6 +1,6 @@
 * {
-  font-family: "DM Sans", sans-serif;
-  margin: 0;
+  font-family: Montserrat, "DM Sans", sans-serif;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
 }
@@ -8,6 +8,9 @@
 body {
   width: 100%;
   min-height: 100dvh;
+  min-width: 320px;
+  max-width: 1280px;
+  text-align: center;
 }
 
 .wrapper {
@@ -19,6 +22,30 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  color: #FFFFFF;
+  -webkit-text-stroke: 2px #000000;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1240px;
+  height: 223px;
+  border-radius: 25px;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../../src/assets/img/banner.png");
 }
 
 /*# sourceMappingURL=style.css.map */
