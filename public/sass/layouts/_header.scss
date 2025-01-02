@@ -1,0 +1,37 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 0 50px 0;
+
+    .logo {
+        width: 210px;
+        height: 68px;
+    }
+    nav {
+        display: flex;
+        column-gap: 57px;
+        font-size: 1.5rem;   
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+    a:active {
+        text-decoration: underline;
+    }
+
+    @include media-phone {
+        padding: 20px 0 27px 0;
+        
+        .logo {
+            width: 145px;
+            height: 47px;
+        }
+
+        nav {
+            column-gap: 26px;
+            font-size: 0.75rem;
+        }
+    }
+}
