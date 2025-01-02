@@ -10,9 +10,30 @@
     background-position: center;
     @include drop-shadow;
 
+    h1 {
+        font-size: 3em;
+        font-weight: bold;
+        color: $secondary-color;
+        -webkit-text-stroke: 2px $tertiary-color;
+        paint-order: stroke fill;
+        text-align: start;
+        @include drop-shadow;
+    }
+
     @include media-phone {
         justify-content: start;
         height: 111px;
         padding: 0 16px;
+
+        h1 {
+            font-size: 24px;
+            -webkit-text-stroke: inherit;
+            paint-order: none;
+            filter: none;
+    
+            .mobile-break-line {
+                display: flex;
+            }
+        }
     }
 }
