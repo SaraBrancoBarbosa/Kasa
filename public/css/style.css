@@ -13,6 +13,7 @@ body {
   max-width: clamp(17rem, 90vw, 1240px);
   width: 100%;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 a {
@@ -24,24 +25,70 @@ a:hover {
   text-decoration: underline;
 }
 
-h1 {
-  font-size: 3em;
-  font-weight: bold;
-  color: #FFFFFF;
-  -webkit-text-stroke: 2px #000000;
-  paint-order: stroke fill;
-  text-align: start;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 45px 0 50px 0;
+  width: 100%;
+}
+header .logo {
+  width: 210px;
+  height: 68px;
+}
+header nav {
+  display: flex;
+  column-gap: 57px;
+  font-size: 1.5rem;
+}
+header a:hover {
+  text-decoration: underline;
+}
+header a:active {
+  text-decoration: underline;
 }
 @media screen and (max-width: 768px) {
-  h1 {
-    font-size: 24px;
-    -webkit-text-stroke: inherit;
-    paint-order: none;
-    filter: none;
+  header {
+    padding: 20px 0 27px 0;
   }
-  h1 .mobile-break-line {
-    display: inline-block;
+  header .logo {
+    width: 145px;
+    height: 47px;
+  }
+  header nav {
+    column-gap: 26px;
+    font-size: 0.75rem;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  background-color: #000000;
+  row-gap: 28px;
+  padding: 66px 0 29px 0;
+  margin: 0 -100px;
+}
+footer .logo-footer {
+  width: 122px;
+  height: 39px;
+}
+footer p {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 66px 0 58px 0;
+  }
+  footer .mobile-break-line {
+    display: flex;
+  }
+  footer p {
+    font-size: 0.75rem;
   }
 }
 
@@ -57,11 +104,60 @@ h1 {
   background-position: center;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 }
+.banner h1 {
+  font-size: 3em;
+  font-weight: bold;
+  color: #FFFFFF;
+  -webkit-text-stroke: 2px #000000;
+  paint-order: stroke fill;
+  text-align: start;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
 @media screen and (max-width: 768px) {
   .banner {
     justify-content: start;
     height: 111px;
-    padding-left: 16px;
+    padding: 0 16px;
+  }
+  .banner h1 {
+    font-size: 24px;
+    -webkit-text-stroke: inherit;
+    paint-order: none;
+    filter: none;
+  }
+  .banner h1 .mobile-break-line {
+    display: flex;
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error h1 {
+  font-size: 18rem;
+  font-weight: bold;
+  color: #FF6060;
+}
+.error h2 {
+  font-size: 2.25rem;
+  color: #FF6060;
+}
+.error h3 {
+  font-size: 1.125rem;
+  text-decoration: underline;
+}
+@media screen and (max-width: 768px) {
+  .error h1 {
+    font-size: 6rem;
+  }
+  .error h2 {
+    font-size: 1.125rem;
+  }
+  .error h3 {
+    font-size: 0.875rem;
   }
 }
 

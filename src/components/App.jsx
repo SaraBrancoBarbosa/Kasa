@@ -5,13 +5,19 @@ import '../../public/css/style.css'
 // Enlever ci-dessous plus tard :
 import '../App.css'
 
+import Header from './Header'
 import Banner from './Banner'
+import Footer from './Footer'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <div className="header">
+        <Header />
+      </div>
+
       <div className="banner">
         <Banner />
       </div>
@@ -35,6 +41,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <div className="footer">
+        <Footer />
+      </div>
     </>
   )
 }
