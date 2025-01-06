@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import Layout from "./layouts/Layout"
 import Homepage from "./pages/homepage/Homepage"
 import Rental from "./pages/rental/Rental"
 import About from "./pages/about/About"
@@ -8,12 +9,12 @@ const AppRouter = () => {
     return (
     <Router>
       <Routes>
-
-        <Route index element={<Homepage />}/>
-        <Route path="/about" element={<About />} />
-        <Route path="/rental" element={<Rental />} />
-        <Route path="/*" element={<Error />} />
-
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Homepage />}/>
+          <Route path="/about" element={<About />} />
+          <Route path="/rental" element={<Rental />} />
+          <Route path="/*" element={<Error />} />
+        </Route>
       </Routes>
     </Router>
     )

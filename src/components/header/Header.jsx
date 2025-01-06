@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import "./header.css"
 
-const logo = "public/assets/logo/logo.svg"
+const logo = "/assets/logo/logo.svg"
 
 function Header() {
     return (
