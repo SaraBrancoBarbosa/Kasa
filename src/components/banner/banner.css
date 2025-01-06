@@ -1,0 +1,79 @@
+* {
+  font-family: Montserrat, "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100dvh;
+  min-width: 320px;
+  text-align: center;
+  max-width: clamp(17rem, 90vw, 1240px);
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1240px;
+  height: 223px;
+  margin: 0;
+  border-radius: 25px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../../../src/assets/img/banner-homepage.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../../src/assets/img/banner-homepage.png");
+  background-position: center;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+.banner h1 {
+  font-size: 3em;
+  font-weight: bold;
+  color: #FFFFFF;
+  -webkit-text-stroke: 2px #000000;
+  paint-order: stroke fill;
+  text-align: start;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+@media screen and (max-width: 768px) {
+  .banner {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    height: 111px;
+    padding: 0 16px;
+  }
+  .banner h1 {
+    font-size: 24px;
+    -webkit-text-stroke: inherit;
+    paint-order: none;
+    -webkit-filter: none;
+            filter: none;
+  }
+  .banner h1 .mobile-break-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}/*# sourceMappingURL=banner.css.map */
