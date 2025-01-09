@@ -1,0 +1,48 @@
+* {
+  font-family: Montserrat, "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100dvh;
+  min-width: 320px;
+  text-align: center;
+  max-width: clamp(17rem, 90vw, 1240px);
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  border-radius: 25px;
+  background-color: #F6F6F6;
+  padding-top: 56px;
+  padding-bottom: 50px;
+  row-gap: 50px;
+  -webkit-column-gap: 60px;
+     -moz-column-gap: 60px;
+          column-gap: 60px;
+}
+@media screen and (max-width: 768px) {
+  .cards-container {
+    background-color: #FFFFFF;
+    padding-top: 22px;
+    padding-bottom: 27px;
+    gap: 20px;
+  }
+}/*# sourceMappingURL=homepage.css.map */
