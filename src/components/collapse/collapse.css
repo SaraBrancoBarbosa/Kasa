@@ -1,0 +1,131 @@
+* {
+  font-family: Montserrat, "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100dvh;
+  min-width: 320px;
+  text-align: center;
+  max-width: clamp(17rem, 90vw, 1240px);
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.collapses-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: 38px 108px;
+  gap: 30px;
+}
+.collapses-container .collapse-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.collapses-container .collapse-content .collapse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1023px;
+  width: 100%;
+  height: 52px;
+  padding: 0px 15px;
+  border-radius: 5px;
+  background-color: #FF6060;
+  color: #FFFFFF;
+}
+.collapses-container .collapse-content .collapse h2 {
+  font-size: 1.5rem;
+}
+.collapses-container .collapse-content .collapse img {
+  width: 24px;
+  height: 14px;
+}
+.collapses-container .collapse-content .collapse .chevron-up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.35s ease;
+  transition: -webkit-transform 0.35s ease;
+  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, -webkit-transform 0.35s ease;
+}
+.collapses-container .collapse-content .collapse .chevron-down {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: -webkit-transform 0.35s ease;
+  transition: -webkit-transform 0.35s ease;
+  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, -webkit-transform 0.35s ease;
+}
+@media screen and (max-width: 768px) {
+  .collapses-container .collapse-content .collapse {
+    height: 30px;
+  }
+  .collapses-container .collapse-content .collapse h2 {
+    font-size: 0.813rem;
+  }
+  .collapses-container .collapse-content .collapse img {
+    width: 16;
+    height: 9px;
+  }
+}
+.collapses-container .collapse-content .text {
+  text-align: justify;
+  font-size: 1.125rem;
+  padding: 20px;
+  background-color: #FBFBFB;
+  border-radius: 0 5px 5px 0;
+}
+@media screen and (max-width: 768px) {
+  .collapses-container .collapse-content .text {
+    font-size: 0.75rem;
+  }
+}
+.collapses-container .collapse-content .text-parent {
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height ease 0.35s;
+  transition: height ease 0.35s;
+}
+@media screen and (max-width: 768px) {
+  .collapses-container {
+    padding: 19px 0px;
+    gap: 20px;
+  }
+}/*# sourceMappingURL=collapse.css.map */
