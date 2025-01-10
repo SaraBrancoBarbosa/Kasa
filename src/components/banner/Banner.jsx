@@ -19,7 +19,3 @@ Banner.propTypes={
 }
 
 export default Banner
-
-/*
-Chez vous, <span className="mobile-break-line">partout et ailleurs</span>
-*/
