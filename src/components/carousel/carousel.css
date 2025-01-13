@@ -1,0 +1,91 @@
+* {
+  font-family: Montserrat, "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100dvh;
+  min-width: 320px;
+  text-align: center;
+  max-width: clamp(17rem, 90vw, 1240px);
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.carousel {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1240px;
+  height: 415px;
+}
+.carousel .slide {
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.carousel .slide-hidden {
+  display: none;
+}
+.carousel .arrow {
+  position: absolute;
+  width: 47px;
+  height: 79px;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .carousel .arrow {
+    width: 12px;
+    height: 20px;
+  }
+}
+.carousel .arrow-left {
+  left: 23px;
+}
+.carousel .arrow-right {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  right: 23px;
+}
+.carousel .indicator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 25px;
+  font-size: 1.125rem;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  .carousel .indicator {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .carousel {
+    height: 225px;
+  }
+}/*# sourceMappingURL=carousel.css.map */

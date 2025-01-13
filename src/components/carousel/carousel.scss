@@ -1,0 +1,58 @@
+@import "../../index";
+
+.carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1240px;
+    height: 415px;
+
+    .slide {
+        border-radius: 25px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slide-hidden {
+        display: none;
+    }
+
+    .arrow {
+        position: absolute;
+        width: 47px;
+        height: 79px;
+        cursor: pointer;
+
+        @include media-phone {
+            width: 12px;
+            height: 20px;
+        }   
+    }
+
+    .arrow-left {
+        left: 23px;
+    }
+
+    .arrow-right {
+        transform: scaleX(-1);
+        right: 23px;
+    }
+
+    .indicator {
+        display: flex;
+        position: absolute;
+        bottom: 25px;
+        font-size: 1.125rem;
+        color: white;
+
+        @include media-phone {
+            display: none;
+        }   
+    }
+
+    @include media-phone {
+        height: 225px;
+    }
+}
