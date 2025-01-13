@@ -1,5 +1,6 @@
 import { useState, useRef } from "react"
 import "./collapse.css"
+import PropTypes from "prop-types"
 
 function Collapse({title, text}) {
     const [visible, setVisible] = useState(false)
@@ -30,6 +31,11 @@ function Collapse({title, text}) {
                 </div>
             </div> 
     )
+}
+
+Collapse.propTypes = {
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
 }
 
 export default Collapse

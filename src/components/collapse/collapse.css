@@ -72,6 +72,7 @@ a:hover {
 .collapses-container .collapse-content .collapse img {
   width: 24px;
   height: 14px;
+  cursor: pointer;
 }
 .collapses-container .collapse-content .collapse .chevron-up {
   display: -webkit-box;
