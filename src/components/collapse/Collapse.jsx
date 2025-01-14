@@ -27,7 +27,7 @@ function Collapse({title, text}) {
                     ref={parentRef} 
                     style={ visible ? { height: parentRef.current.scrollHeight + "px" } : {  height: "0px" } }
                 >
-                    <p className="text">{text}</p>
+                    <div className="text">{text}</div>
                 </div>
             </div> 
     )

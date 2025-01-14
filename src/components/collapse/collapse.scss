@@ -78,10 +78,31 @@
             transition: height ease 0.35s;
         }
 
-    }  
+    }
     
     @include media-phone {
         padding: 19px 0px;
         gap: 20px;
+    }
+
+}
+
+.rental {
+    gap: 76px;
+    padding: 24px 0px 50px 0;
+    flex-direction: row;
+
+    .collapse-content {
+        .collapse {  
+            h2 {
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+    @include media-phone {
+        padding: 19px 0px 27px 0;
+        gap: 20px;
+        flex-direction: column;
     }
 }

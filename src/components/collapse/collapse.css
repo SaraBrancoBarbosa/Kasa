@@ -129,4 +129,26 @@ a:hover {
     padding: 19px 0px;
     gap: 20px;
   }
+}
+
+.rental {
+  gap: 76px;
+  padding: 24px 0px 50px 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.rental .collapse-content .collapse h2 {
+  font-size: 1.125rem;
+}
+@media screen and (max-width: 768px) {
+  .rental {
+    padding: 19px 0px 27px 0;
+    gap: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }/*# sourceMappingURL=collapse.css.map */
