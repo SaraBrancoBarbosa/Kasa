@@ -1,49 +1,64 @@
-import { useEffect, useState } from 'react'
-import Header from '../../components/header/Header'
-import Footer from '../../components/footer/Footer'
-import Gallery from '../../components/gallery/Gallery'
+import Carousel from "../../components/carousel/Carousel"
+import Collapse from "../../components/collapse/Collapse"
+import RatingStars from "../../components/ratingStars/RatingStars"
+import { rentalsList } from "../../../public/data/rentals.json"
+import "./rental.css"
 
 const id = "46d188c5"
 
-const Rental = () => {
+function Rental() {
 
-  const [rentals, setRentals] = useState(null)
-
-    useEffect(() => {
-        const fetchData = async (setRentals) => {
-            await fetch("public/data/rentals.json")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Error! status: ${response.status}`)
-                }
-                return response.json()
-            })
-            .then(database => {
-                console.log(database)
-                setRentals(database.rentals)
-            })
-            .catch(error => {
-                console.error("Error getting the rental list:", error)
-            }) 
-        }
-        if (setRentals)
-            fetchData(setRentals)
-    },[setRentals])
+  const rental = rentalsList.find(item => item.id === id)
 
   return (
-    <>
-      <Header />
+    <div>
 
-      <Gallery 
-        images={
-          rentals ? 
-            rentals.find(r => r.id === id).pictures
-            : null
-        } 
-      />
+      <Carousel data={rental} />
 
-      <Footer />
-    </>
+      <div className="container">
+
+        <div className="title-and-tags">
+          <div className="title-and-location">
+            <h1>{rental.title}</h1>
+            <p>{rental.location}</p>
+          </div>
+          <div className="tags">{rental.tags.map((tag, index) => (
+            <span className="tag" key={index}>{tag}</span>
+          ))}</div>
+        </div>
+
+        <div className="host-and-rating">
+          <div className="host">
+
+            <div> {rental.host.name.split(" ").map((str, index) => (
+              <h3 key={index}>{str}</h3>
+            ))}</div>
+
+            <img src={rental.host.picture} alt="Image du propriétaire"/>
+          </div>
+
+          <RatingStars data={rental} />
+          
+        </div>
+
+      </div>
+      
+      <div>
+      <div className="collapses-container rental">
+        <Collapse 
+          title="Description"
+          text={rental.description}
+        />
+        <Collapse 
+          title="Équipements"
+          text={rental.equipments.map((equipement, index) => 
+            <p key={index}>{equipement}</p>)} 
+        />
+      </div>
+      
+    </div>
+
+    </div>
   )
 }
 

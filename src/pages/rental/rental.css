@@ -1,0 +1,170 @@
+* {
+  font-family: Montserrat, "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100dvh;
+  min-width: 320px;
+  text-align: center;
+  max-width: clamp(17rem, 90vw, 1240px);
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .title-and-tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 30px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 20px;
+}
+.container .title-and-tags .title-and-location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 5px;
+}
+.container .title-and-tags .title-and-location h1 {
+  font-size: 2.25rem;
+  color: #FF6060;
+}
+.container .title-and-tags .title-and-location p {
+  font-size: 1.125rem;
+}
+@media screen and (max-width: 768px) {
+  .container .title-and-tags .title-and-location h1 {
+    font-size: 1.125rem;
+  }
+  .container .title-and-tags .title-and-location p {
+    font-size: 0.875rem;
+  }
+}
+.container .title-and-tags .tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.container .title-and-tags .tags .tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #FF6060;
+  color: #FFFFFF;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: 25px;
+  padding: 0 20px;
+}
+@media screen and (max-width: 768px) {
+  .container .title-and-tags .tags .tag {
+    font-size: 0.625rem;
+  }
+}
+.container .host-and-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 20px;
+}
+.container .host-and-rating .host {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 10px;
+}
+.container .host-and-rating .host h3 {
+  font-size: 1.125rem;
+  color: #FF6060;
+  font-weight: normal;
+}
+.container .host-and-rating .host img {
+  border-radius: 50px;
+  width: 64px;
+  height: 64px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .container .host-and-rating {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .host-and-rating .host h3 {
+    font-size: 0.75rem;
+  }
+  .container .host-and-rating .host img {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}/*# sourceMappingURL=rental.css.map */

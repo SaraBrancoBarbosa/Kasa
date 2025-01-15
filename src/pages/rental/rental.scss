@@ -1,0 +1,111 @@
+@import "../../index";
+
+.container {
+    display: flex;
+    justify-content: space-between;
+
+    .title-and-tags {
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        align-items: start;
+        gap: 20px;
+    
+        .title-and-location {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 5px;
+            
+            h1 {
+                font-size: 2.25rem;
+                color: $primary-color;
+            }
+    
+            p {
+                font-size: 1.125rem;
+            }
+        }
+
+        @include media-phone {
+            .title-and-location {                
+                h1 {
+                    font-size: 1.125rem;
+                }
+        
+                p {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+
+            .tag {
+                display: flex;
+                align-items: center;
+                background-color: $primary-color;
+                color: $secondary-color;
+                border-radius: 10px;
+                font-size: 0.875rem;
+                font-weight: bold;
+                height: 25px;
+                padding: 0 20px;
+
+                @include media-phone {
+                    font-size: 0.625rem;
+                }
+            }
+        }
+    }
+    
+    .host-and-rating {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 20px;
+    
+        .host {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 10px;
+            
+            h3 {
+                font-size: 1.125rem;
+                color: $primary-color;
+                font-weight: normal;
+            }
+    
+            img {
+                border-radius: 50px;
+                width: 64px;
+                height: 64px;
+                object-fit: cover;
+            }
+        }
+
+        @include media-phone {
+            flex-direction: row-reverse;
+            align-items: center;
+
+            .host {
+                h3 {
+                    font-size: 0.75rem;
+                }
+        
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+
+    @include media-phone {
+        justify-content: start;
+        flex-direction: column;
+    }
+}
