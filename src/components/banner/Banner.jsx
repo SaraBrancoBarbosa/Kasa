@@ -15,7 +15,7 @@ function Banner({url,title}) {
 
 Banner.propTypes={
 	url:PropTypes.string.isRequired,
-	title:PropTypes.object
+	title:PropTypes.node
 }
 
 export default Banner
