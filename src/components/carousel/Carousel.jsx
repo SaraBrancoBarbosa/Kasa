@@ -26,7 +26,7 @@ const Carousel = ({ data }) => {
             <img src="../../../public/assets/icons/Arrow-left.svg" className="arrow arrow-left" onClick={previousSlide} alt="Image précédente" />
 
             {data.pictures.map((picture, idx) => {
-                return <img src={picture} key={idx} className={slide === idx ? "slide" : "slide slide-hidden"}/>
+                return <img src={picture} key={`picture-${idx}`} className={slide === idx ? "slide" : "slide slide-hidden"}/>
             })}
             
             <img src="../../../public/assets/icons/Arrow-left.svg" className="arrow arrow-right" onClick={nextSlide} alt="Image suivante" />
