@@ -7,84 +7,81 @@
     padding: 38px 108px;
     gap: 30px;
 
-    .collapse-content {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-
-        .collapse {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1023px;
-            width: 100%;
-            height: 52px;
-            padding: 0px 15px;
-            border-radius: 5px;
-            background-color: $primary-color;
-            color: $secondary-color;
-    
-            h2 {
-                font-size: 1.5rem;
-            }
-    
-            img {
-                width: 24px;
-                height: 14px;
-                cursor: pointer;
-            }
-
-            .chevron-up {
-                display: flex;
-                transition: transform 0.35s ease;
-            }
-
-            .chevron-down {
-                display: flex;
-                transform: rotate(180deg);
-                transition: transform 0.35s ease;
-            }
-
-            @include media-phone {
-                height: 30px;
-                
-                h2 {
-                    font-size: 0.813rem;
-                }
-
-                img {
-                    width: 16;
-                    height: 9px;
-                }
-            }
-
-        } 
-
-        .text {
-            text-align: justify;
-            font-size: 1.125rem;
-            padding: 20px;
-            background-color: #FBFBFB;
-            border-radius: 0 5px 5px 0;
-
-            @include media-phone {
-                font-size: 0.75rem;
-            }            
-        }
-
-        .text-parent {
-            height: 0px;
-            overflow: hidden;
-            transition: height ease 0.35s;
-        }
-
-    }
-    
     @include media-phone {
         padding: 19px 0px;
         gap: 20px;
     }
+}
 
+.collapse {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .collapse-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1023px;
+        width: 100%;
+        height: 52px;
+        padding: 0px 15px;
+        border-radius: 5px;
+        background-color: $primary-color;
+        color: $secondary-color;
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        img {
+            width: 24px;
+            height: 14px;
+            cursor: pointer;
+        }
+
+        .chevron-up {
+            display: flex;
+            transition: transform 0.35s ease;
+        }
+
+        .chevron-down {
+            display: flex;
+            transform: rotate(180deg);
+            transition: transform 0.35s ease;
+        }
+
+        @include media-phone {
+            height: 30px;
+            
+            h2 {
+                font-size: 0.813rem;
+            }
+
+            img {
+                width: 16;
+                height: 9px;
+            }
+        }
+    } 
+
+    .text {
+        text-align: justify;
+        font-size: 1.125rem;
+        padding: 20px;
+        background-color: #FBFBFB;
+        border-radius: 0 5px 5px 0;
+
+        @include media-phone {
+            font-size: 0.75rem;
+        }            
+    }
+
+    .text-parent {
+        height: 0px;
+        overflow: hidden;
+        transition: height ease 0.35s;
+    }
 }
 
 .rental {
@@ -92,8 +89,8 @@
     padding: 24px 0px 50px 0;
     flex-direction: row;
 
-    .collapse-content {
-        .collapse {  
+    .collapse {  
+        .collapse-content {
             h2 {
                 font-size: 1.125rem;
             }

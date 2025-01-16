@@ -11,7 +11,6 @@ body {
   min-height: 100dvh;
   min-width: 320px;
   text-align: center;
-  max-width: clamp(17rem, 90vw, 1240px);
   width: 100%;
   margin: 0 auto;
   overflow-x: hidden;
@@ -38,7 +37,14 @@ a:hover {
   padding: 38px 108px;
   gap: 30px;
 }
-.collapses-container .collapse-content {
+@media screen and (max-width: 768px) {
+  .collapses-container {
+    padding: 19px 0px;
+    gap: 20px;
+  }
+}
+
+.collapse {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,7 +54,7 @@ a:hover {
           flex-direction: column;
   width: 100%;
 }
-.collapses-container .collapse-content .collapse {
+.collapse .collapse-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,15 +72,15 @@ a:hover {
   background-color: #FF6060;
   color: #FFFFFF;
 }
-.collapses-container .collapse-content .collapse h2 {
+.collapse .collapse-content h2 {
   font-size: 1.5rem;
 }
-.collapses-container .collapse-content .collapse img {
+.collapse .collapse-content img {
   width: 24px;
   height: 14px;
   cursor: pointer;
 }
-.collapses-container .collapse-content .collapse .chevron-up {
+.collapse .collapse-content .chevron-up {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,7 +89,7 @@ a:hover {
   transition: transform 0.35s ease;
   transition: transform 0.35s ease, -webkit-transform 0.35s ease;
 }
-.collapses-container .collapse-content .collapse .chevron-down {
+.collapse .collapse-content .chevron-down {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -95,18 +101,18 @@ a:hover {
   transition: transform 0.35s ease, -webkit-transform 0.35s ease;
 }
 @media screen and (max-width: 768px) {
-  .collapses-container .collapse-content .collapse {
+  .collapse .collapse-content {
     height: 30px;
   }
-  .collapses-container .collapse-content .collapse h2 {
+  .collapse .collapse-content h2 {
     font-size: 0.813rem;
   }
-  .collapses-container .collapse-content .collapse img {
+  .collapse .collapse-content img {
     width: 16;
     height: 9px;
   }
 }
-.collapses-container .collapse-content .text {
+.collapse .text {
   text-align: justify;
   font-size: 1.125rem;
   padding: 20px;
@@ -114,21 +120,15 @@ a:hover {
   border-radius: 0 5px 5px 0;
 }
 @media screen and (max-width: 768px) {
-  .collapses-container .collapse-content .text {
+  .collapse .text {
     font-size: 0.75rem;
   }
 }
-.collapses-container .collapse-content .text-parent {
+.collapse .text-parent {
   height: 0px;
   overflow: hidden;
   -webkit-transition: height ease 0.35s;
   transition: height ease 0.35s;
-}
-@media screen and (max-width: 768px) {
-  .collapses-container {
-    padding: 19px 0px;
-    gap: 20px;
-  }
 }
 
 .rental {
@@ -139,7 +139,7 @@ a:hover {
       -ms-flex-direction: row;
           flex-direction: row;
 }
-.rental .collapse-content .collapse h2 {
+.rental .collapse .collapse-content h2 {
   font-size: 1.125rem;
 }
 @media screen and (max-width: 768px) {
