@@ -1,0 +1,14 @@
+@import "../index";
+
+.width-margin {
+    max-width: 1440px;
+    padding: 0 100px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: calc(100dvh - 186px);
+
+    @include media-phone {
+        min-height: calc(100dvh - 223px);
+        padding: 0 20px;
+    }
+}
