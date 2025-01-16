@@ -11,7 +11,6 @@ body {
   min-height: 100dvh;
   min-width: 320px;
   text-align: center;
-  max-width: clamp(17rem, 90vw, 1240px);
   width: 100%;
   margin: 0 auto;
   overflow-x: hidden;
@@ -40,11 +39,10 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 1440px;
+  width: 100%;
   background-color: #000000;
   row-gap: 28px;
   padding: 66px 0 29px 0;
-  margin: 0 -100px;
 }
 footer .logo-footer {
   width: 122px;
