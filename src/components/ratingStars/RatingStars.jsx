@@ -1,9 +1,10 @@
 import PropTypes from "prop-types"
-import starFilled from "../../../public/assets/icons/StarFilled.svg"
-import starEmpty from "../../../public/assets/icons/StarEmpty.svg"
 import "./ratingStar.css"
 
 const RatingStars = ({ data }) => {
+
+  const starFilled = "/public/assets/icons/StarFilled.svg"
+  const starEmpty = "/public/assets/icons/StarEmpty.svg"
 
     const ratingStarsArr = []
       for (let i = 0; i < 5; i++) {
@@ -13,7 +14,7 @@ const RatingStars = ({ data }) => {
   return (
     <div className="rating">
         {ratingStarsArr.map((starSrc, index) => (
-            <img key={index} src={starSrc} alt="Système de notation" />
+            <img key={`rating-${index}`} src={starSrc} alt="Notation" />
         ))}
     </div>
   )
