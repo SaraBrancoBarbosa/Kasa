@@ -52,6 +52,10 @@
         }   
     }
 
+    .hidden {
+        display: none;
+    }
+
     @include media-phone {
         height: 225px;
     }
