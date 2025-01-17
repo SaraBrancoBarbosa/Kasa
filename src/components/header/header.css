@@ -101,7 +101,7 @@ header nav {
 header a:hover {
   text-decoration: underline;
 }
-header a:active {
+header .active {
   text-decoration: underline;
 }
 @media screen and (max-width: 768px) {
