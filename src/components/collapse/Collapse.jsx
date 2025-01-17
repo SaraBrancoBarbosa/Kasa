@@ -1,6 +1,6 @@
 import { useState, useRef } from "react"
-import "./collapse.css"
 import PropTypes from "prop-types"
+import "./collapse.css"
 
 function Collapse({title, children}) {
     const [visible, setVisible] = useState(false)
@@ -26,7 +26,12 @@ function Collapse({title, children}) {
                 ref={parentRef} 
                 style={ visible ? { height: parentRef.current.scrollHeight + "px" } : {  height: "0px" } }
             >
-                <div className="text">{children}</div>
+                <div 
+                    className="text"
+                    style={{ transform: visible ? "translateY(0)" : "translateY(-100%)" }}
+                >
+                    {children}
+                </div>
             </div>
         </div> 
     )

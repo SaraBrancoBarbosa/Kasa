@@ -65,22 +65,24 @@
         }
     } 
 
+    .text-parent {
+        height: 0px;
+        overflow: hidden;
+        transition: height ease 0.35s;
+    }
+
     .text {
         text-align: justify;
         font-size: 1.125rem;
         padding: 20px;
         background-color: #FBFBFB;
         border-radius: 0 5px 5px 0;
+        transition: transform 0.35s ease;
+        transform:translateY(-20px);
 
         @include media-phone {
             font-size: 0.75rem;
         }            
-    }
-
-    .text-parent {
-        height: 0px;
-        overflow: hidden;
-        transition: height ease 0.35s;
     }
 }
 

@@ -159,23 +159,29 @@ a:hover {
     height: 9px;
   }
 }
+.collapse .text-parent {
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height ease 0.35s;
+  transition: height ease 0.35s;
+}
 .collapse .text {
   text-align: justify;
   font-size: 1.125rem;
   padding: 20px;
   background-color: #FBFBFB;
   border-radius: 0 5px 5px 0;
+  -webkit-transition: -webkit-transform 0.35s ease;
+  transition: -webkit-transform 0.35s ease;
+  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, -webkit-transform 0.35s ease;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
 }
 @media screen and (max-width: 768px) {
   .collapse .text {
     font-size: 0.75rem;
   }
-}
-.collapse .text-parent {
-  height: 0px;
-  overflow: hidden;
-  -webkit-transition: height ease 0.35s;
-  transition: height ease 0.35s;
 }
 
 .rental {
