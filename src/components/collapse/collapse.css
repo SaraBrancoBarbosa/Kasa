@@ -140,8 +140,8 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
   -webkit-transition: -webkit-transform 0.35s ease;
   transition: -webkit-transform 0.35s ease;
   transition: transform 0.35s ease;
