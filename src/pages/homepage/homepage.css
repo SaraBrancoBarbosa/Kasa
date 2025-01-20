@@ -11,7 +11,6 @@ body {
   min-height: 100dvh;
   min-width: 320px;
   text-align: center;
-  max-width: clamp(17rem, 90vw, 1240px);
   width: 100%;
   margin: 0 auto;
   overflow-x: hidden;
@@ -26,13 +25,61 @@ a:hover {
   text-decoration: underline;
 }
 
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #FF6060;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 30px 0;
+}
+.loading .spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #E3E3E3;
+  border-top: 3px solid #FF6060;
+  border-radius: 50%;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  justify-items: center;
   border-radius: 25px;
   background-color: #F6F6F6;
-  padding-top: 56px;
-  padding-bottom: 50px;
+  margin: 50px 0;
+  padding: 50px;
   row-gap: 50px;
   -webkit-column-gap: 60px;
      -moz-column-gap: 60px;
@@ -41,8 +88,8 @@ a:hover {
 @media screen and (max-width: 768px) {
   .cards-container {
     background-color: #FFFFFF;
-    padding-top: 22px;
-    padding-bottom: 27px;
+    margin: 22px 0px 27px 0;
+    padding: 0;
     gap: 20px;
   }
 }/*# sourceMappingURL=homepage.css.map */

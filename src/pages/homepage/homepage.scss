@@ -3,17 +3,18 @@
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    justify-items: center;
     border-radius: 25px;
     background-color: #F6F6F6;
-    padding-top: 56px;
-    padding-bottom: 50px;
+    margin: 50px 0;
+    padding: 50px;
     row-gap: 50px;
     column-gap: 60px;
 
     @include media-phone {
         background-color: $secondary-color;
-        padding-top: 22px;
-        padding-bottom: 27px;
+        margin: 22px 0px 27px 0;
+        padding: 0;
         gap: 20px;
     }
 }

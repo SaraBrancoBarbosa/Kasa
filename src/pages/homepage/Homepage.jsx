@@ -1,107 +1,48 @@
+import { useEffect } from 'react'
+import useFetchRentals from '../../api/Api'
 import Banner from '../../components/banner/Banner'
 import Card from '../../components/card/Card'
-import { useFetchRentals } from '../../api/Rentals'
+import { useNavigate } from 'react-router'
+import "./homepage.css"
 
 const Homepage = () => {
-    //const { error, isLoaded, rentals } = useFetchRentals()
-    
-    
-    const { error, isLoaded, rentals } = [{
-		"id": "c67ab8a7",
-		"title": "Appartement cosy",
-		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
-		"pictures": [
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-3.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-4.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg"
-		],
-		"description": "Votre maison loin de chez vous. Que vous veniez de l'autre bout du monde, ou juste de quelques stations de RER, vous vous sentirez chez vous dans notre appartement.",
-		"host": {
-			"name": "Nathalie Jean",
-			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-12.jpg"
-		},
-		"rating": "5",
-		"location": "Ile de France - Paris 17e",
-		"equipments": [
-			"Équipements de base",
-			"Micro-Ondes",
-			"Douche italienne",
-			"Frigo",
-			"WIFI"
-		],
-		"tags": [
-			"Batignolle",
-			"Montmartre"
-		]
-	},
-	{
-		"id": "b9123946",
-		"title": "Magnifique appartement proche Canal Saint Martin",
-		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
-		"pictures": [
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-2.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-3.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-4.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-5.jpg",
-			"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-6.jpg"
-		],
-		"description": "Profitez du charme de la vie parisienne dans un magnifique appartement. A 3 minutes à pied du Canl Saint Martin, vous serez proche des transports, mais également de nombreux commerces. L'appartement est tout équipé, et possède également un parking pour ceux qui souhaitent se déplacer en voiture.",
-		"host": {
-			"name": "Della Case",
-			"picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-1.jpg"
-		},
-		"rating": "4",
-		"location": "Ile de France - Paris 10e",
-		"equipments": [
-			"Parking",
-			"Sèche Cheveux",
-			"Machine à laver",
-			"Wi-fi",
-			"Cuisine équipée",
-			"Télévision"
-		],
-		"tags": [
-			"Canal Saint Martin",
-			"République",
-			"Appartement"
-		]
-	}]
 
-    if (error) {
-        return (
-        <div>
-            Error: {error.message}
-        </div>
-        )
-    } else if (!isLoaded) {
-        return (
-        <div>
-            Chargement des locations...
-        </div>
-        )
-    } else {
+    const navigate = useNavigate()
 
-        return (
+    const {error, loaded, loading, rentalsList} = useFetchRentals()
+    
+    useEffect(() => {
+        if (error) {
+            navigate("/error/",{state:{code:500, message:error}})
+        }
+    }, [error, navigate])
+
+    return (
         <>
             <Banner url="/assets/img/banner-homepage.png" title={
                 <>Chez vous, <span className="mobile-break-line">partout et ailleurs</span></>
             }/>
+         
+            {loading && !error && (
+                <div className="loading">Chargement des locations
+                    <span className="spinner"></span>
+                </div>   
+            )}
 
-            <div className="cards-container">
-                { rentals.map((rental) => (
-                    <Card key=
-                        {rental.id}
-                        id={rental.id}
-                        title={rental.title}
-                        cover={rental.cover}
-                    />
-                ))}
-            </div>
+            {loaded && !loading && !error && (
+                <div className="cards-container">
+                    { rentalsList && rentalsList.map((rental) => (
+                        <Card 
+                            key={rental.id}
+                            id={rental.id}
+                            title={rental.title}
+                            cover={rental.cover}
+                        />
+                    ))}
+                </div>
+            )}
         </>
     )
-}}
+}
 
 export default Homepage
