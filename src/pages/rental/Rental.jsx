@@ -1,14 +1,45 @@
+import { useNavigate, useParams } from "react-router"
+import useFetchRentals from "../../api/Api"
+import { useEffect, useState } from "react"
 import Carousel from "../../components/carousel/Carousel"
 import Collapse from "../../components/collapse/Collapse"
 import RatingStars from "../../components/ratingStars/RatingStars"
-import { rentalsList } from "../../../public/data/rentals.json"
 import "./rental.css"
-
-const id = "46d188c5"
 
 function Rental() {
 
-  const rental = rentalsList.find(item => item.id === id)
+  const {id} = useParams()
+
+  const navigate = useNavigate()
+  const [rental, setRental] = useState(null)
+  const {error, loaded, loading, rentalsList} = useFetchRentals()
+  
+  // Observer le changement de valeur
+  useEffect(() => {
+      if (error) {
+        console.log("error:", error)
+          navigate("/error/",{state:{code:500, message:error}})
+      }
+  }, [error, navigate])
+
+  useEffect(() => {
+    if (id && loaded && rentalsList) {
+      const rental = rentalsList.find(item => item.id === id)
+      if (!rental) {
+        navigate("/error/",{state:{code:404, message:"Rental not found"}})
+      } else {
+        setRental(rental)
+      }
+    }
+  }, [loaded, rentalsList, id, navigate])
+
+  if (loading || !rental) {
+    return (
+      <div className="loading">Chargement des informations
+        <span className="spinner"></span>
+      </div>
+    )
+  }
 
   return (
     <div>
@@ -22,18 +53,14 @@ function Rental() {
             <h1>{rental.title}</h1>
             <p>{rental.location}</p>
           </div>
-          <div className="tags">{rental.tags.map((tag, index) => (
-            <span className="tag" key={index}>{tag}</span>
+          <div className="tags">{rental.tags.map((tag) => (
+            <span className="tag" key={`tag-${tag}`}>{tag}</span>
           ))}</div>
         </div>
 
         <div className="host-and-rating">
           <div className="host">
-
-            <div> {rental.host.name.split(" ").map((str, index) => (
-              <h3 key={index}>{str}</h3>
-            ))}</div>
-
+            <h3> {rental.host.name}</h3>
             <img src={rental.host.picture} alt="Image du propriétaire"/>
           </div>
 
@@ -45,15 +72,15 @@ function Rental() {
       
       <div>
       <div className="collapses-container rental">
-        <Collapse 
-          title="Description"
-          text={rental.description}
-        />
-        <Collapse 
-          title="Équipements"
-          text={rental.equipments.map((equipement, index) => 
-            <p key={index}>{equipement}</p>)} 
-        />
+        <Collapse title="Description">
+          {rental.description}
+        </Collapse>
+        
+        <Collapse title="Équipements">
+          {rental.equipments.map((equipement) => 
+            <p key={`equipement-${equipement}`}>{equipement}</p>)} 
+        </Collapse>
+        
       </div>
       
     </div>
