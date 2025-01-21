@@ -86,11 +86,30 @@ a:hover {
   height: 223px;
   margin: 0;
   border-radius: 25px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../../../src/assets/img/banner-homepage.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../../src/assets/img/banner-homepage.png");
   background-position: center;
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  position: relative;
+}
+.banner .dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  border-radius: 25px;
+}
+.banner .light-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  border-radius: 25px;
 }
 .banner h1 {
   font-size: 3em;
@@ -101,6 +120,7 @@ a:hover {
   text-align: start;
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  z-index: 2;
 }
 @media screen and (max-width: 768px) {
   .banner {

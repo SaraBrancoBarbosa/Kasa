@@ -8,9 +8,31 @@
     height: 223px;
     margin: 0;
     border-radius: 25px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)) , url("../../../src/assets/img/banner-homepage.png");
     background-position: center;
     @include drop-shadow;
+    position: relative;
+
+    .dark-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+        border-radius: 25px;
+    }
+
+    .light-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        border-radius: 25px;
+    }
 
     h1 {
         font-size: 3em;
@@ -20,6 +42,7 @@
         paint-order: stroke fill;
         text-align: start;
         @include drop-shadow;
+        z-index: 2;
     }
 
     @include media-phone {

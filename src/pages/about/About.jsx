@@ -5,7 +5,10 @@ const About = () => {
   
   return (
     <div>
-      <Banner url="/assets/img/banner-about.png" />
+      <Banner 
+        url="/assets/img/banner-about.png" 
+        lightOverlay={true}
+      />
 
       <div className="collapses-container">
         

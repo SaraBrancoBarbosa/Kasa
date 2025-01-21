@@ -19,10 +19,14 @@ const Homepage = () => {
 
     return (
         <>
-            <Banner url="/assets/img/banner-homepage.png" title={
-                <>Chez vous, <span className="mobile-break-line">partout et ailleurs</span></>
-            }/>
-         
+            <Banner 
+                url="/assets/img/banner-homepage.png" 
+                title={
+                    <>Chez vous, <span className="mobile-break-line">partout et ailleurs</span></>
+                }
+                darkOverlay={true}
+            />
+
             {loading && !error && (
                 <div className="loading">Chargement des locations
                     <span className="spinner"></span>
