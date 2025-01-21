@@ -17,6 +17,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    background-color: #FBFBFB;
+    border-radius: 5px;
 
     .collapse-content {
         display: flex;
@@ -75,8 +77,6 @@
         text-align: justify;
         font-size: 1.125rem;
         padding: 20px;
-        background-color: #FBFBFB;
-        border-radius: 0 5px 5px 0;
         transition: transform 0.35s ease;
 
         @include media-phone {
