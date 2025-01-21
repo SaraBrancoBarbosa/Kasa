@@ -11,10 +11,10 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />}/>
-          <Route path="/about" element={<About />} />
-          <Route path="/rental/:id" element={<Rental />} />
-          <Route path="/error" element={<Error />} />
-          <Route path="/*" element={<Error />} />
+          <Route path="about" element={<About />} />
+          <Route path="rental/:id" element={<Rental />} />
+          <Route path="error" element={<Error />} />
+          <Route path="*" element={<Error />} />
         </Route>
       </Routes>
     </Router>
