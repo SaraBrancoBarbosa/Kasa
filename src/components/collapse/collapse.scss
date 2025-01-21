@@ -78,7 +78,6 @@
         background-color: #FBFBFB;
         border-radius: 0 5px 5px 0;
         transition: transform 0.35s ease;
-        transform:translateY(-20px);
 
         @include media-phone {
             font-size: 0.75rem;

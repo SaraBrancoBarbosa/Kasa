@@ -175,8 +175,6 @@ a:hover {
   transition: -webkit-transform 0.35s ease;
   transition: transform 0.35s ease;
   transition: transform 0.35s ease, -webkit-transform 0.35s ease;
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
 }
 @media screen and (max-width: 768px) {
   .collapse .text {
