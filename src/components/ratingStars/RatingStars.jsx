@@ -6,6 +6,7 @@ const RatingStars = ({ data }) => {
   const starFilled = "/public/assets/icons/StarFilled.svg"
   const starEmpty = "/public/assets/icons/StarEmpty.svg"
 
+    // starFilled according to the rating number, the other stars are grey/empty
     const ratingStarsArr = []
       for (let i = 0; i < 5; i++) {
         ratingStarsArr.push(i < data.rating ? starFilled : starEmpty)

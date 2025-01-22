@@ -8,9 +8,9 @@ import "./homepage.css"
 const Homepage = () => {
 
     const navigate = useNavigate()
-
     const {error, loaded, loading, rentalsList} = useFetchRentals()
     
+    // Error 500 management
     useEffect(() => {
         if (error) {
             navigate("/error/",{state:{code:500, message:error}})
@@ -27,6 +27,7 @@ const Homepage = () => {
                 darkOverlay={true}
             />
 
+            {/* Loading message */}
             {loading && !error && (
                 <div className="loading">Chargement des locations
                     <span className="spinner"></span>

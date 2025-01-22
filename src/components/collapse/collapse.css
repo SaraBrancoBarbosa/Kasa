@@ -202,4 +202,7 @@ a:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .rental .collapse .collapse-content h2 {
+    font-size: 0.813rem;
+  }
 }/*# sourceMappingURL=collapse.css.map */

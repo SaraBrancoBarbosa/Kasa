@@ -99,10 +99,12 @@ header nav {
   font-size: 1.5rem;
 }
 header a:hover {
-  text-decoration: underline;
+  -webkit-text-decoration: underline 1px;
+          text-decoration: underline 1px;
 }
 header .active {
-  text-decoration: underline;
+  -webkit-text-decoration: underline 1px;
+          text-decoration: underline 1px;
 }
 @media screen and (max-width: 768px) {
   header {

@@ -102,5 +102,13 @@
         padding: 19px 0px 27px 0;
         gap: 20px;
         flex-direction: column;
+
+        .collapse {  
+            .collapse-content {
+                h2 {
+                    font-size: 0.813rem;
+                }
+            }
+        }
     }
 }

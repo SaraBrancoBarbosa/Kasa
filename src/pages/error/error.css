@@ -100,7 +100,8 @@ a:hover {
 }
 .error h3 {
   font-size: 1.125rem;
-  text-decoration: underline;
+  -webkit-text-decoration: underline 1px;
+          text-decoration: underline 1px;
 }
 @media screen and (max-width: 768px) {
   .error h1 {

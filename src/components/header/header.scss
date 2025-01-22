@@ -18,10 +18,10 @@ header {
     }
 
     a:hover {
-        text-decoration: underline;
+        text-decoration: underline 1px;
     }
     .active {
-        text-decoration: underline;
+        text-decoration: underline 1px;
     }
 
     @include media-phone {

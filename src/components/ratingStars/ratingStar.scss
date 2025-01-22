@@ -4,10 +4,16 @@
     display: flex;
     justify-content: end;
     gap: 10px;
-    height: 24px;
+
+    img {
+        height: 24px;
+    }
 
     @include media-phone {
             gap: 5px;
-            height: 13px;
+
+            img {
+                height: 13px;
+            }
     }
 }

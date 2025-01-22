@@ -129,6 +129,13 @@ a:hover {
             justify-content: start;
     height: 111px;
     padding: 0 16px;
+    border-radius: 10px;
+  }
+  .banner .dark-overlay {
+    border-radius: 10px;
+  }
+  .banner .light-overlay {
+    border-radius: 10px;
   }
   .banner h1 {
     font-size: 24px;

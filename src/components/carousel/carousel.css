@@ -137,4 +137,7 @@ a:hover {
   .carousel {
     height: 225px;
   }
+  .carousel .slide {
+    border-radius: 10px;
+  }
 }/*# sourceMappingURL=carousel.css.map */

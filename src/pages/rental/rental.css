@@ -146,6 +146,8 @@ a:hover {
 @media screen and (max-width: 768px) {
   .container .title-and-tags .tags .tag {
     font-size: 0.625rem;
+    border-radius: 5px;
+    height: 18px;
   }
 }
 .container .host-and-rating {

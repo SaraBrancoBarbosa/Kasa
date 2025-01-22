@@ -8,9 +8,11 @@ const useFetchRentals = () => {
     const [error, setError] = useState(null)
 
     useEffect(() => {
+        
+        // Async func inside useEffect
         const loadRentals = async() => {
             setTimeout(() => {
-                fetch("/public/data/rentals.json")
+                fetch("/data/rentals.json")
                 .then(response => {
                     return response.json()
                 })
@@ -25,13 +27,17 @@ const useFetchRentals = () => {
                 .finally(() => {
                     setLoading(false)
                 })
+            // Loading simulation    
             }, 1500)
         } 
+
         setError(null)
         setLoaded(false)
         setLoading(true)
         loadRentals()
+
     }, [])
+
     return {
         rentalsList,
         loading,

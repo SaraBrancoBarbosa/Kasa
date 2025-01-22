@@ -21,9 +21,11 @@ function Collapse({title, children}) {
                     alt="Afficher ou cacher le texte."
                 />
             </div>
+            
+            {/* Style: to create a smooth animation */}
             <div 
                 className="text-parent" 
-                ref={parentRef} 
+                ref={parentRef}
                 style={ visible ? { height: parentRef.current.scrollHeight + "px" } : {  height: "0px" } }
             >
                 <div 

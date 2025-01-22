@@ -8,20 +8,19 @@ import "./rental.css"
 
 function Rental() {
 
-  const {id} = useParams()
-
   const navigate = useNavigate()
-  const [rental, setRental] = useState(null)
   const {error, loaded, loading, rentalsList} = useFetchRentals()
+  const {id} = useParams()
+  const [rental, setRental] = useState(null)
   
-  // Observer le changement de valeur
+  // Error 500 management
   useEffect(() => {
       if (error) {
-        console.log("error:", error)
-          navigate("/error/",{state:{code:500, message:error}})
+        navigate("/error/",{state:{code:500, message:error}})
       }
   }, [error, navigate])
 
+  // To find the id and manage the 404 error + loaded system
   useEffect(() => {
     if (id && loaded && rentalsList) {
       const rental = rentalsList.find(item => item.id === id)
@@ -33,9 +32,11 @@ function Rental() {
     }
   }, [loaded, rentalsList, id, navigate])
 
+  // Loading message
   if (loading || !rental) {
     return (
-      <div className="loading">Chargement des informations
+      <div className="loading">
+        Chargement des informations
         <span className="spinner"></span>
       </div>
     )
@@ -63,26 +64,22 @@ function Rental() {
             <h3> {rental.host.name}</h3>
             <img src={rental.host.picture} alt="Image du propriétaire"/>
           </div>
-
           <RatingStars data={rental} />
-          
         </div>
 
       </div>
       
       <div>
-      <div className="collapses-container rental">
-        <Collapse title="Description">
-          {rental.description}
-        </Collapse>
-        
-        <Collapse title="Équipements">
-          {rental.equipments.map((equipement) => 
-            <p key={`equipement-${equipement}`}>{equipement}</p>)} 
-        </Collapse>
-        
-      </div>
-      
+        <div className="collapses-container rental">
+          <Collapse title="Description">
+            {rental.description}
+          </Collapse>
+          
+          <Collapse title="Équipements">
+            {rental.equipments.map((equipement) => 
+              <p key={`equipement-${equipement}`}>{equipement}</p>)} 
+          </Collapse>
+        </div>
     </div>
 
     </div>

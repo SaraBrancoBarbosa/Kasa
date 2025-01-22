@@ -3,10 +3,13 @@ import "./error.css"
 
 function Error() {
 
+    // Error 404 page by default. But can be adapted for other codes (ex: 500)
+
     const location = useLocation()
     const state = location ?.state
     const {code, message} = state ?? {code: "404", message: undefined}
     console.log(code, message)
+    
     return (
         <div className="error">
             <h1>{code ?? "404"}</h1>

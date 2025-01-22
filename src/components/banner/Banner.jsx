@@ -6,6 +6,7 @@ function Banner({url,title, darkOverlay = false, lightOverlay = false}) {
 			<div className="banner" style={{
 				backgroundImage:`url(${url})`
 			}}>
+				{/* Different overlay for Homepage and About */}
 				{(darkOverlay || lightOverlay) && (
 					<div className={darkOverlay ? "dark-overlay" : "light-overlay"}>
 					</div>

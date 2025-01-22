@@ -21,13 +21,14 @@ const Carousel = ({ data }) => {
     return ( 
         <div className="carousel">
 
-            <img src="/public/assets/icons/Arrow-left.svg" className={`arrow arrow-left ${singlePicture ? "hidden" : ""}`} onClick={previousSlide} alt="Image précédente" />
+            <img src="/assets/icons/Arrow-left.svg" className={`arrow arrow-left ${singlePicture ? "hidden" : ""}`} onClick={previousSlide} alt="Image précédente" />
 
             {data.pictures.map((picture, idx) => {
+                {/* To display only the current picture */}
                 return <img src={picture} key={`picture-${idx}`} className={slide === idx ? "slide" : "slide slide-hidden"}/>
             })}
             
-            <img src="/public/assets/icons/Arrow-left.svg" className={`arrow arrow-right ${singlePicture ? "hidden" : ""}`} onClick={nextSlide} alt="Image suivante" />
+            <img src="/assets/icons/Arrow-left.svg" className={`arrow arrow-right ${singlePicture ? "hidden" : ""}`} onClick={nextSlide} alt="Image suivante" />
 
             <span className={`indicator ${singlePicture ? "hidden" : ""}`}>{slide + 1}/{totalPictures}</span>
 
