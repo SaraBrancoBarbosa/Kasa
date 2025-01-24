@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router-dom"
 import "./error.css"
 
-function Error() {
+// Error 404 page by default. But can be adapted for other codes (ex: 500) thanks to the state
 
-    // Error 404 page by default. But can be adapted for other codes (ex: 500)
+function Error() {
 
     const location = useLocation()
     const state = location ?.state

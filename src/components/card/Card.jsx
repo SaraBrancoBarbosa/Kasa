@@ -2,6 +2,8 @@ import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 import "./card.css"
 
+// Card component for the Homepage rentals list
+
 function Card({id, title, cover}) {
     return (
 		<Link to={`./rental/${id}`} className="card">

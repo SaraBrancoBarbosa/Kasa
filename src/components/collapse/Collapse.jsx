@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from "react"
 import PropTypes from "prop-types"
 import "./collapse.css"
 
-function Collapse({title, children, defaultValue=false}) {
+function Collapse({title, children}) {
 
-    const [visible, setVisible] = useState(defaultValue)
+    const [visible, setVisible] = useState(false)
     const [height, setHeight] = useState("0px")
     const parentRef = useRef()
 
@@ -18,10 +18,6 @@ function Collapse({title, children, defaultValue=false}) {
         setHeight(visible ? parentRef.current.scrollHeight + "px" : "0px")
     },[visible, parentRef])
 
-    useEffect(() => {
-        setVisible(defaultValue)
-    }, [defaultValue])
-
     return (
         <div className="collapse">
             <div className="collapse-content">
@@ -33,18 +29,19 @@ function Collapse({title, children, defaultValue=false}) {
                 />
             </div>
             
-            {/* Style: to create a smooth animation */}
+            {/* Style and ref: to create a smooth animation with an adaptative height */}
             <div 
                 className="text-parent" 
                 ref={parentRef}
                 style={{height}}
             >
+
+                {/* The text slides smoothly */}
                 <div 
                     className="text"
                     style={{ transform: visible ? "translateY(0)" : "translateY(-100%)" }}
                 >
                     {children}
-                    {defaultValue}
                 </div>
             </div>
         </div> 
@@ -54,7 +51,6 @@ function Collapse({title, children, defaultValue=false}) {
 Collapse.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.node,
-    defaultValue: PropTypes.bool,
 }
 
 export default Collapse

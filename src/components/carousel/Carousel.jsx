@@ -2,10 +2,14 @@ import PropTypes from "prop-types"
 import { useCallback, useEffect, useState } from "react"
 import "./carousel.css"
 
+// Carousel component for each rental pages
+
 const Carousel = ({ pictures }) => {
     const [slide, setSlide] = useState(0)
+    // For the arrows and number indicator:
     const [showControls, setShowControls] = useState(false)
 
+    // Pictures has to exist to avoid any errors. "Current" represents the current slide.
     const nextSlide = useCallback(() => {
         if (!(pictures)) return
         setSlide((current) => current === pictures.length - 1 ? 0 : current + 1)
@@ -16,6 +20,7 @@ const Carousel = ({ pictures }) => {
         setSlide((current) => current === 0 ? pictures.length - 1 : current - 1)
     }, [pictures, setSlide])
 
+    // If there is only one picture, then the arrows and number indicator are hidden
     useEffect(()=> {
         setShowControls(pictures && pictures.length > 1)
     },[pictures])

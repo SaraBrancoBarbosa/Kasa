@@ -1,6 +1,8 @@
 import PropTypes from "prop-types"
 import "./ratingStar.css"
 
+// For the Rental pages: shows the rating score
+
 const RatingStars = ({ rating }) => {
 
   const starFilled = "/public/assets/icons/StarFilled.svg"
