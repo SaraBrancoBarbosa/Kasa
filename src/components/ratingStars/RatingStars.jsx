@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import "./ratingStar.css"
 
-const RatingStars = ({ data }) => {
+const RatingStars = ({ rating }) => {
 
   const starFilled = "/public/assets/icons/StarFilled.svg"
   const starEmpty = "/public/assets/icons/StarEmpty.svg"
@@ -9,7 +9,7 @@ const RatingStars = ({ data }) => {
     // starFilled according to the rating number, the other stars are grey/empty
     const ratingStarsArr = []
       for (let i = 0; i < 5; i++) {
-        ratingStarsArr.push(i < data.rating ? starFilled : starEmpty)
+        ratingStarsArr.push(i < rating ? starFilled : starEmpty)
       }
 
   return (
@@ -22,6 +22,6 @@ const RatingStars = ({ data }) => {
 }
 
 RatingStars.propTypes = {
-    data: PropTypes.object.isRequired
+    rating: PropTypes.number.isRequired
 }
 export default RatingStars

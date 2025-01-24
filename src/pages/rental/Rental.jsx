@@ -43,9 +43,8 @@ function Rental() {
   }
 
   return (
-    <div>
-
-      <Carousel data={rental} />
+    <>
+      <Carousel pictures={rental.pictures} />
 
       <div className="container">
 
@@ -64,7 +63,7 @@ function Rental() {
             <h3> {rental.host.name}</h3>
             <img src={rental.host.picture} alt="Image du propriétaire"/>
           </div>
-          <RatingStars data={rental} />
+          <RatingStars rating={+rental.rating} />
         </div>
 
       </div>
@@ -76,13 +75,12 @@ function Rental() {
           </Collapse>
           
           <Collapse title="Équipements">
-            {rental.equipments.map((equipement) => 
-              <p key={`equipement-${equipement}`}>{equipement}</p>)} 
+            {rental.equipments.map((equipment) => 
+              <p key={`equipment-${equipment}`}>{equipment}</p>)} 
           </Collapse>
         </div>
-    </div>
-
-    </div>
+      </div>
+    </>
   )
 }
 
