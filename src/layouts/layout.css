@@ -9,11 +9,9 @@
 body {
   width: 100%;
   min-height: 100dvh;
-  min-width: 320px;
   text-align: center;
   width: 100%;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 a {
@@ -77,11 +75,42 @@ a:hover {
   padding: 0 100px;
   width: 100%;
   margin: 0 auto;
-  min-height: calc(100dvh - 186px);
+  min-height: calc(100dvh - 209px);
 }
 @media screen and (max-width: 768px) {
   .width-margin {
-    min-height: calc(100dvh - 223px);
+    min-height: calc(100dvh - 209px);
     padding: 0 20px;
   }
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 50px;
+  padding-top: 45px;
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    gap: 27px;
+    padding-top: 20px;
+  }
+}
+.wrapper main {
+  min-height: max(100dvh - 422px, 400px);
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .wrapper main {
+    min-height: calc(100dvh - 330px);
+  }
+}
+
+footer {
+  height: 209px;
 }/*# sourceMappingURL=layout.css.map */

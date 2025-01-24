@@ -9,11 +9,9 @@
 body {
   width: 100%;
   min-height: 100dvh;
-  min-width: 320px;
   text-align: center;
   width: 100%;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 a {
@@ -81,13 +79,15 @@ a:hover {
           justify-content: end;
   gap: 10px;
 }
-.rating img {
-  height: 24px;
-}
 @media screen and (max-width: 768px) {
   .rating {
     gap: 5px;
   }
+}
+.rating img {
+  height: 24px;
+}
+@media screen and (max-width: 768px) {
   .rating img {
     height: 13px;
   }

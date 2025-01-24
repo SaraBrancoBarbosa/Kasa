@@ -2,13 +2,21 @@
 
 footer {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     width: 100%;
     background-color: $tertiary-color;
     row-gap: 28px;
     padding: 66px 0 29px 0;
+
+    @include media-phone {
+        padding: 66px 0 58px 0;
+        
+        .mobile-break-line {
+            display: flex;
+        }
+    }
 
     .logo-footer {
         width: 122px;
@@ -18,16 +26,8 @@ footer {
     p {
         font-size: 1.5rem;
         color: $secondary-color;
-    }
 
-    @include media-phone {
-        padding: 66px 0 58px 0;
-        
-        .mobile-break-line {
-            display: flex;
-        }
-        
-        p {
+        @include media-phone {        
             font-size: 0.75rem;
         }
     }

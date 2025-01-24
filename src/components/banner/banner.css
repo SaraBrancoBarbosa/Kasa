@@ -9,11 +9,9 @@
 body {
   width: 100%;
   min-height: 100dvh;
-  min-width: 320px;
   text-align: center;
   width: 100%;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 a {
@@ -73,80 +71,59 @@ a:hover {
   }
 }
 .banner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  max-width: 1240px;
+  display: block;
+  width: 100%;
   height: 223px;
   margin: 0;
   border-radius: 25px;
   background-position: center;
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-  position: relative;
-}
-.banner .dark-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-  border-radius: 25px;
-}
-.banner .light-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-  border-radius: 25px;
-}
-.banner h1 {
-  font-size: 3em;
-  font-weight: bold;
-  color: #FFFFFF;
-  -webkit-text-stroke: 2px #000000;
-  paint-order: stroke fill;
-  text-align: start;
-  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-  z-index: 2;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .banner {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
     height: 111px;
-    padding: 0 16px;
     border-radius: 10px;
-  }
-  .banner .dark-overlay {
-    border-radius: 10px;
-  }
-  .banner .light-overlay {
-    border-radius: 10px;
-  }
-  .banner h1 {
-    font-size: 24px;
-    -webkit-text-stroke: inherit;
-    paint-order: none;
     -webkit-filter: none;
             filter: none;
   }
-  .banner h1 .mobile-break-line {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+}
+.banner .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .banner .content {
+    padding: 0 1rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
+}
+.banner .darker-overlay {
+  background: rgba(0, 0, 0, 0.6666666667);
+}
+.banner .dark-overlay {
+  background: rgba(0, 0, 0, 0.3333333333);
+}
+.banner .lighter-overlay {
+  background: rgba(255, 255, 255, 0.6666666667);
+}
+.banner .light-overlay {
+  background: rgba(255, 255, 255, 0.3333333333);
+}
+
+.no-drop-shadow {
+  -webkit-filter: none;
+          filter: none;
 }/*# sourceMappingURL=banner.css.map */

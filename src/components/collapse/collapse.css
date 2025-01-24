@@ -9,11 +9,9 @@
 body {
   width: 100%;
   min-height: 100dvh;
-  min-width: 320px;
   text-align: center;
   width: 100%;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 a {
@@ -100,7 +98,6 @@ a:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  background-color: #FBFBFB;
   border-radius: 5px;
 }
 .collapse .collapse-content {
@@ -120,14 +117,31 @@ a:hover {
   border-radius: 5px;
   background-color: #FF6060;
   color: #FFFFFF;
+  z-index: 2;
+}
+@media screen and (max-width: 768px) {
+  .collapse .collapse-content {
+    height: 30px;
+  }
 }
 .collapse .collapse-content h2 {
   font-size: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  .collapse .collapse-content h2 {
+    font-size: 0.813rem;
+  }
 }
 .collapse .collapse-content img {
   width: 24px;
   height: 14px;
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .collapse .collapse-content img {
+    width: 16;
+    height: 9px;
+  }
 }
 .collapse .collapse-content .chevron-up {
   display: -webkit-box;
@@ -149,23 +163,15 @@ a:hover {
   transition: transform 0.35s ease;
   transition: transform 0.35s ease, -webkit-transform 0.35s ease;
 }
-@media screen and (max-width: 768px) {
-  .collapse .collapse-content {
-    height: 30px;
-  }
-  .collapse .collapse-content h2 {
-    font-size: 0.813rem;
-  }
-  .collapse .collapse-content img {
-    width: 16;
-    height: 9px;
-  }
-}
 .collapse .text-parent {
   height: 0px;
   overflow: hidden;
   -webkit-transition: height ease 0.35s;
   transition: height ease 0.35s;
+  background-color: #FBFBFB;
+  -webkit-box-shadow: 0px -10px #FBFBFB;
+          box-shadow: 0px -10px #FBFBFB;
+  z-index: 1;
 }
 .collapse .text {
   text-align: justify;
@@ -195,7 +201,7 @@ a:hover {
 }
 @media screen and (max-width: 768px) {
   .rental {
-    padding: 19px 0px 27px 0;
+    padding: 15px 0px 27px 0;
     gap: 20px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

@@ -6,9 +6,13 @@ import "./layout.css"
 const Layout = () => {
     return (
       <>
-        <div className="width-margin">
+        <div className="width-margin wrapper">
           <Header />
-          <Outlet />
+
+          <main>
+            <Outlet />
+          </main>
+
         </div>
         <Footer />
       </>

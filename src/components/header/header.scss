@@ -4,17 +4,32 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 45px 0 50px 0;
     width: 100%;
+
+    @media screen and (max-width: 350px){
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+    }
 
     .logo {
         width: 210px;
         height: 68px;
+
+        @include media-phone {
+            width: 145px;
+            height: 47px;
+        }
     }
     nav {
         display: flex;
         column-gap: 57px;
-        font-size: 1.5rem;   
+        font-size: 1.5rem;
+
+        @include media-phone {
+            column-gap: 26px;
+            font-size: 0.75rem;
+        }
     }
 
     a:hover {
@@ -22,19 +37,5 @@ header {
     }
     .active {
         text-decoration: underline 1px;
-    }
-
-    @include media-phone {
-        padding: 20px 0 27px 0;
-
-        .logo {
-            width: 145px;
-            height: 47px;
-        }
-
-        nav {
-            column-gap: 26px;
-            font-size: 0.75rem;
-        }
-    }
+    } 
 }

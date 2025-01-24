@@ -18,14 +18,13 @@ const Homepage = () => {
     }, [error, navigate])
 
     return (
-        <>
+        <div className="homepage">
             <Banner 
                 url="/assets/img/banner-homepage.png" 
-                title={
-                    <>Chez vous, <span className="mobile-break-line">partout et ailleurs</span></>
-                }
-                darkOverlay={true}
-            />
+                theme="dark"
+            >
+                <h1>Chez vous, <span className="mobile-break-line">partout et ailleurs</span></h1>
+            </Banner>
 
             {/* Loading message */}
             {loading && !error && (
@@ -46,7 +45,7 @@ const Homepage = () => {
                     ))}
                 </div>
             )}
-        </>
+        </div>
     )
 }
 

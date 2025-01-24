@@ -2,12 +2,13 @@ import Banner from "../../components/banner/Banner"
 import Collapse from "../../components/collapse/Collapse"
 
 const About = () => {
-  
+
   return (
-    <div>
+    <>
       <Banner 
         url="/assets/img/banner-about.png" 
-        lightOverlay={true}
+        theme="dark"
+        shadow="no-drop-shadow"
       />
 
       <div className="collapses-container">
@@ -27,10 +28,10 @@ const About = () => {
         <Collapse title="Sécurité">
           La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l&apos;hôte qu&apos;au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.
         </Collapse>
-          
+        
       </div>
       
-    </div>
+    </>
   )
 }
 

@@ -5,10 +5,35 @@
     padding: 0 100px;
     width: 100%;
     margin: 0 auto;
-    min-height: calc(100dvh - 186px);
+    min-height: calc(100dvh - 209px);
 
     @include media-phone {
-        min-height: calc(100dvh - 223px);
+        min-height: calc(100dvh - 209px);
         padding: 0 20px;
+    }    
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 45px;
+
+    @include media-phone {
+        gap: 27px;
+        padding-top: 20px;
     }
+
+    & main {
+        min-height: max(100dvh - 422px, 400px);
+        width: 100%;
+
+        @include media-phone {
+            min-height: calc(100dvh - 330px);
+        }
+    }   
+}
+
+footer {
+    height: 209px;
 }
