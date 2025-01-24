@@ -1,15 +1,26 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import PropTypes from "prop-types"
 import "./collapse.css"
 
-function Collapse({title, children}) {
-    const [visible, setVisible] = useState(false)
+function Collapse({title, children, defaultValue=false}) {
 
+    const [visible, setVisible] = useState(defaultValue)
+    const [height, setHeight] = useState("0px")
     const parentRef = useRef()
-    
+
     const toggle = () => {
-        setVisible(!visible)
+        //return !current
+        setVisible(current => !current)
     }
+    
+    useEffect (() => {
+        if(!parentRef.current) return
+        setHeight(visible ? parentRef.current.scrollHeight + "px" : "0px")
+    },[visible, parentRef])
+
+    useEffect(() => {
+        setVisible(defaultValue)
+    }, [defaultValue])
 
     return (
         <div className="collapse">
@@ -26,13 +37,14 @@ function Collapse({title, children}) {
             <div 
                 className="text-parent" 
                 ref={parentRef}
-                style={ visible ? { height: parentRef.current.scrollHeight + "px" } : {  height: "0px" } }
+                style={{height}}
             >
                 <div 
                     className="text"
                     style={{ transform: visible ? "translateY(0)" : "translateY(-100%)" }}
                 >
                     {children}
+                    {defaultValue}
                 </div>
             </div>
         </div> 
@@ -42,6 +54,7 @@ function Collapse({title, children}) {
 Collapse.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.node,
+    defaultValue: PropTypes.bool,
 }
 
 export default Collapse

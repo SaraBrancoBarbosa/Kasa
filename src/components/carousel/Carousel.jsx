@@ -1,45 +1,50 @@
 import PropTypes from "prop-types"
-import { useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import "./carousel.css"
 
-const Carousel = ({ data }) => {
+const Carousel = ({ pictures }) => {
     const [slide, setSlide] = useState(0)
+    const [showControls, setShowControls] = useState(false)
 
-    const totalPictures = data.pictures.length
-
-    // To hide the arrows and indicator when there is only one picture
-    const singlePicture = totalPictures === 1
-
-    const nextSlide = () => {
-        setSlide(slide === totalPictures - 1 ? 0 : slide + 1)
-    }
+    const nextSlide = useCallback(() => {
+        if (!(pictures)) return
+        setSlide((current) => current === pictures.length - 1 ? 0 : current + 1)
+    }, [pictures, setSlide])
         
-    const previousSlide = () => {
-        setSlide(slide === 0 ? totalPictures - 1 : slide - 1)
-    }
+    const previousSlide = useCallback(() => {
+        if (!(pictures)) return
+        setSlide((current) => current === 0 ? pictures.length - 1 : current - 1)
+    }, [pictures, setSlide])
+
+    useEffect(()=> {
+        setShowControls(pictures && pictures.length > 1)
+    },[pictures])
 
     return ( 
         <div className="carousel">
 
-            <img src="/assets/icons/Arrow-left.svg" className={`arrow arrow-left ${singlePicture ? "hidden" : ""}`} onClick={previousSlide} alt="Image précédente" />
+            {showControls && (
+                <img src="/assets/icons/Arrow-left.svg" className={`arrow arrow-left`} onClick={previousSlide} alt="Image précédente" />
+            )}
 
-            {data.pictures.map((picture, idx) => {
-                {/* To display only the current picture */}
-                return <img src={picture} key={`picture-${idx}`} className={slide === idx ? "slide" : "slide slide-hidden"}/>
-            })}
+            {pictures.length > slide && (
+                <img src={pictures[slide]} className={"slide"} alt="Image d'exemple" />
+            )}
             
-            <img src="/assets/icons/Arrow-left.svg" className={`arrow arrow-right ${singlePicture ? "hidden" : ""}`} onClick={nextSlide} alt="Image suivante" />
+            {showControls && (
+                <img src="/assets/icons/Arrow-left.svg" className={`arrow arrow-right`} onClick={nextSlide} alt="Image suivante" />
+            )}
 
-            <span className={`indicator ${singlePicture ? "hidden" : ""}`}>{slide + 1}/{totalPictures}</span>
+            {showControls && (
+                <span className={`indicator`}>{slide + 1}/{pictures.length}</span>
+            )}
 
         </div>
     )
 }
 
 Carousel.propTypes = {
-    data: PropTypes.shape({
-        pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }).isRequired,
+    pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default Carousel
