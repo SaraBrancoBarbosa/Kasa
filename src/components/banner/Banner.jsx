@@ -1,27 +1,23 @@
 import PropTypes from "prop-types"
 import "./banner.css"
 
-function Banner({url,title, darkOverlay = false, lightOverlay = false}) {
+function Banner({url, children, theme = "default"}) {
 	return (
 			<div className="banner" style={{
 				backgroundImage:`url(${url})`
 			}}>
 				{/* Different overlay for Homepage and About */}
-				{(darkOverlay || lightOverlay) && (
-					<div className={darkOverlay ? "dark-overlay" : "light-overlay"}>
-					</div>
-				)}
-				{title &&
-					<h1>{title}</h1>
-				}
+				<div className={ `content ${theme}-overlay`}>
+					{children}
+				</div>
 			</div>
 	)
 }
 
 Banner.propTypes={
 	url:PropTypes.string.isRequired,
-	title:PropTypes.node,
-	darkOverlay: PropTypes.bool,
+	children:PropTypes.node,
+	theme: PropTypes.oneOf(["default", "dark", "light", "darker", "lighter"]),
 	lightOverlay: PropTypes.bool
 }
 
