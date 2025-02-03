@@ -12,7 +12,7 @@ const useFetchRentals = () => {
         // Async func inside useEffect
         const loadRentals = async() => {
             setTimeout(() => {
-                fetch("/data/rentals.json")
+                fetch("data/rentals.json")
                 .then(response => {
                     return response.json()
                 })
