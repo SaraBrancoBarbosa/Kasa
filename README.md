@@ -1,8 +1,11 @@
-# React + Vite
+# Kasa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projet Kasa : Développer une application Web avec React et React Router.<br><br>
 
-Currently, two official plugins are available:
+Kasa est une entreprise fictive, imaginée par OpenClassrooms dans le cadre de ma formation.<br><br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ce projet m'a initié à la logique de présentation des données et des composants React, en utilisant Vite.<br>
+J'ai approfondi mes connaissances en animations CSS avec SASS.<br>
+Aussi, j'ai découvert et utilisé React Router pour configurer la navigation entre les différentes pages de l'application.<br><br>
+
+Lien vers le site déployé : https://sarabrancobarbosa.github.io/Kasa/
