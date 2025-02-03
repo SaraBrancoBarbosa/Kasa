@@ -5,8 +5,8 @@ import "./ratingStar.css"
 
 const RatingStars = ({ rating }) => {
 
-  const starFilled = "/public/assets/icons/StarFilled.svg"
-  const starEmpty = "/public/assets/icons/StarEmpty.svg"
+  const starFilled = "assets/icons/StarFilled.svg"
+  const starEmpty = "assets/icons/StarEmpty.svg"
 
     // starFilled according to the rating number, the other stars are grey/empty
     const ratingStarsArr = []
