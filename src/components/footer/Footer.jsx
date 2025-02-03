@@ -1,6 +1,6 @@
 import "./footer.css"
 
-const logoFooter = "/assets/logo/logo-footer.svg"
+const logoFooter = "assets/logo/logo-footer.svg"
 
 function Footer() {
     return (

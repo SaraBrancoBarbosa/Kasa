@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
       <Banner 
-        url="/assets/img/banner-about.png" 
+        url="assets/img/banner-about.png" 
         theme="dark"
         shadow="no-drop-shadow"
       />

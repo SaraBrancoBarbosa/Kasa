@@ -20,7 +20,7 @@ const Homepage = () => {
     return (
         <div className="homepage">
             <Banner 
-                url="/assets/img/banner-homepage.png" 
+                url="assets/img/banner-homepage.png" 
                 theme="dark"
             >
                 <h1>Chez vous, <span className="mobile-break-line">partout et ailleurs</span></h1>

@@ -29,7 +29,7 @@ const Carousel = ({ pictures }) => {
         <div className="carousel">
 
             {showControls && (
-                <img src="/assets/icons/Arrow-left.svg" className={`arrow arrow-left`} onClick={previousSlide} alt="Image précédente" />
+                <img src="assets/icons/Arrow-left.svg" className={`arrow arrow-left`} onClick={previousSlide} alt="Image précédente" />
             )}
 
             {pictures.length > slide && (
@@ -37,7 +37,7 @@ const Carousel = ({ pictures }) => {
             )}
             
             {showControls && (
-                <img src="/assets/icons/Arrow-left.svg" className={`arrow arrow-right`} onClick={nextSlide} alt="Image suivante" />
+                <img src="assets/icons/Arrow-left.svg" className={`arrow arrow-right`} onClick={nextSlide} alt="Image suivante" />
             )}
 
             {showControls && (

@@ -22,7 +22,7 @@ function Collapse({title, children}) {
         <div className="collapse">
             <div className="collapse-content">
                 <h2>{title}</h2>
-                <img src="/assets/icons/chevron.svg"
+                <img src="assets/icons/chevron.svg"
                     onClick={toggle}
                     className={visible ? "chevron-down" : "chevron-up"}
                     alt="Afficher ou cacher le texte."
